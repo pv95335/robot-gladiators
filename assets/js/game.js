@@ -62,8 +62,20 @@ var promptFight = window.prompt("Would you like to Fight or Skip this battle? En
   }
 };
 
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+
+
+  console.log("Your robot's name is"  + name);
+  return name;
+}
+
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
@@ -175,7 +187,7 @@ var shop = function() {
 
     case "UPGRADE": // new case
     case "upgrade":
-      playerInfoInfo.upgradeAttack();
+      playerInfo.upgradeAttack();
       break;
 
     case "LEAVE": // new case
